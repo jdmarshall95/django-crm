@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Зарегистрироваться{% endblock %}
+
+{% block content %}
+    <h1 class="text-xl">Зарегистрироваться</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button class="py-4 px-8 bg-indigo-500 text-white rounded-xl">Зарегистрироваться</button>
+    </form>
+{% endblock %}
