@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Лиды{% endblock %}
+
+{% block content %}
+    <div class="py-6 px-6">
+        <h1 class="py-2 px-1 text-xl">Клиенты</h1>
+        <a href="#" class="inline-block py-4 px-6 bg-indigo-300 hover:bg-indigo-400 rounded-xl text-white">Добавить клиента</a>
+        <a href="#" class="inline-block py-4 px-6 bg-green-300 hover:bg-green-400 rounded-xl text-white" >Загрузить .xlsx</a>
+
+        <div class="mt-6 flex justify-between">
+            <p class="py-4 px-2 bg-gray-200 font-semibold w-full">Имя</p>
+        </div>
+
+        {% for client in clients %}
+            <div class="flex justify-between">
+                <p class="py-2 px-2 w-full hover:bg-gray-300 {% cycle 'bg-gray-100' '' %}">
+                    <a href="{% url 'clients_detail' client.id %}">{{ client.name }}</a> 
+                </p>
+            </div>
+        {% empty %}
+            <p class="px-2">База данных пуста...</p>
+
+        {% endfor %}
+    </div>
+{% endblock %}
