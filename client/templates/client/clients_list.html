@@ -5,7 +5,7 @@
 {% block content %}
     <div class="py-6 px-6">
         <h1 class="py-2 px-1 text-xl">Клиенты</h1>
-        <a href="#" class="inline-block py-4 px-6 bg-indigo-300 hover:bg-indigo-400 rounded-xl text-white">Добавить клиента</a>
+        <a href="{% url 'add_client' %}" class="inline-block py-4 px-6 bg-indigo-300 hover:bg-indigo-400 rounded-xl text-white">Добавить клиента</a>
         <a href="#" class="inline-block py-4 px-6 bg-green-300 hover:bg-green-400 rounded-xl text-white" >Загрузить .xlsx</a>
 
         <div class="mt-6 flex justify-between">
