@@ -6,7 +6,7 @@
     <div class="py-6 px-6">
         <h1 class="text-xl">Добавить лид</h1>
 
-        {% if team.plan.max_leads > team.leads.all |length }
+        {% if team.plan.max_leads > team.leads.all|length %}
 
             <form method="post" action=".">
                 {% csrf_token %}
@@ -16,7 +16,9 @@
                 <button class="py-4 px-8 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl">Добавить</button>
             </form>
         {% else %}
-            <p>Лимит закончился</p>
+            <div class="px-6 py-4 bg-red-400 rounded-xl text-white">
+                Команда достигла лимита клиентов. Руководитель должен оплатить план с большим количеством.
+            </div>
         {% endif %}
 
     </div>
