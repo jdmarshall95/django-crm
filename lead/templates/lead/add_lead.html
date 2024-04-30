@@ -6,6 +6,8 @@
     <div class="py-6 px-6">
         <h1 class="text-xl">Добавить лид</h1>
 
+        Num leads:{{team.plan.max_leads}} - {{team.leads.all|length}}
+
         {% if team.plan.max_leads > team.leads.all|length %}
 
             <form method="post" action=".">

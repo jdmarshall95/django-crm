@@ -36,7 +36,7 @@ def add_client(request):
 
             messages.success(request, 'Запись была успешно добавлена.')
 
-            return redirect('clients_list') 
+            return redirect('clients:list') 
         
     else:
         form = AddClientForm()
@@ -52,7 +52,7 @@ def clients_delete(request, pk):
 
     messages.success(request, 'Запись была успешно удалена.')
 
-    return redirect('clients_list')
+    return redirect('clients:list')
 
 @login_required
 def clients_edit(request, pk):
@@ -66,7 +66,7 @@ def clients_edit(request, pk):
 
             messages.success(request, 'Запись была успешно изменена.')
 
-            return redirect('clients_list')
+            return redirect('clients:list')
     else:
         form = AddClientForm(instance=client)
 

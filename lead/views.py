@@ -35,7 +35,7 @@ def leads_delete(request, pk):
 
     messages.success(request, 'Запись была успешно удалена.')
 
-    return redirect('leads_list')
+    return redirect('leads:list')
 
 @login_required
 def leads_edit(request, pk):
@@ -49,7 +49,7 @@ def leads_edit(request, pk):
 
             messages.success(request, 'Запись была успешно изменена.')
 
-            return redirect('leads_list')
+            return redirect('leads:list')
     else:
         form = AddLeadForm(instance=lead)
 
@@ -76,7 +76,7 @@ def add_lead(request):
 
             messages.success(request, 'Запись была успешно добавлена.')
 
-            return redirect('leads_list') 
+            return redirect('leads:list') 
         
     else:
         form = AddLeadForm()
@@ -104,7 +104,7 @@ def convert_to_client(request, pk):
 
     messages.success(request, 'Лид был успешно конвертирован в клиента.')
 
-    return redirect('leads_list')
+    return redirect('leads:list')
 
 @login_required
 def export_to_excel(request):

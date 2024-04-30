@@ -16,13 +16,13 @@
         <strong>Команда: </strong> {{ team.name }}
 
         {% if team.created_by == request.user %}
-            <a href="{% url 'edit_team' team.id %}" class=" hover:bg-indigo-300 underline">Редактировать</a>
+            <a href="{% url 'team:edit' team.id %}" class=" hover:bg-indigo-300 underline">Редактировать</a>
         {% endif %}
     </p>
 
     <hr class="mb-4 ">
 
-    <a href="{% url 'logout' %}" class="inline-block py-3 px-6 bg-red-600 hover:bg-red-500 rounded-xl text-white shadow-lg shadow-inner">Выйти</a>
+    <a href="{% url 'userprofile:logout' %}" class="inline-block py-3 px-6 bg-red-600 hover:bg-red-500 rounded-xl text-white shadow-lg shadow-inner">Выйти</a>
 </div>
 {% endblock %}
 
